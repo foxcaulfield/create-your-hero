@@ -83,38 +83,54 @@ function CreateHeroScreen(props) {
       
         {/* <br/> */}
         <div><strong>SKILLS</strong></div>
-        <div>Available skillpoints:</div>
+        <div><em>Available skill points:{theHero.skillPoints}</em></div>
         <br/>
         <div><u>STRENGTH GROUP</u></div>
         <div>Attack: {theHero.skills.strength.attack}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength}>+</button>
+          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength}>-</button></div>
         
         <br/>
         <div><u>AGILITY SKILLS</u></div>
         <div>Stealth: {theHero.skills.agility.stealth}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility}>+</button>
+          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility}>-</button></div>
+
         <div>Archery: {theHero.skills.agility.archery}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility}>+</button>
+          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility}>-</button></div>
 
         <br/>    
         <div><u>INTELLIGENCE SKILLS</u></div>
         <div>Educability: {theHero.skills.intelligence.educability}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence}>+</button>
+          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence}>-</button></div>
+
         <div>Survivability: {theHero.skills.intelligence.survivability}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence}>+</button>
+          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence}>-</button></div>
+
         <div>Healing: {theHero.skills.intelligence.healing}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence}>+</button>
+          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence}>-</button></div>
 
         <br/>    
         <div><u>CHARISMA SKILLS</u></div>
         <div>Intimidation: {theHero.skills.charisma.intimidation}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma}>+</button>
+          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma}>-</button></div>
+
         <div>Insight: {theHero.skills.charisma.insight}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma}>+</button>
+          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma}>-</button></div>
+
         <div>Appearance: {theHero.skills.charisma.appearance}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma}>+</button>
+          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma}>-</button></div>
+
         <div>Manipulation: {theHero.skills.charisma.manipulation}
-          <button>+</button><button>-</button></div>
+          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma}>+</button>
+          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma}>-</button></div>
          
       </div>
       )}

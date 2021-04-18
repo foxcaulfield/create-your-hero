@@ -91,7 +91,7 @@ const initialState = {
   }],
 
   initialParameterPoints:15,
-  initialSkillPoints:15,
+  initialSkillPoints:10,
   isCreating: false,
 };
 
@@ -118,6 +118,7 @@ function heroesReducer(state = initialState, action) {
         name: "Samwise Gamgee",
         id:state.heroes.length+1,
         parameterPoints: state.initialParameterPoints,
+        skillPoints: state.initialSkillPoints,
         baseParameters:{
           strength: 0,
           agility: 0,
