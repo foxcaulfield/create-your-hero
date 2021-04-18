@@ -12,6 +12,7 @@ function ChooseHeroScreen(props) {
     <div>
       <div>
         Choose your hero!
+        {/* {props.isCreating? "smthng is creating now": "allrght, nthng si creating"} */}
         {props.heroes.map((hero, index) =>
           <div key={index}>
             {hero.name}
@@ -27,11 +28,12 @@ function ChooseHeroScreen(props) {
       <div>
         create new hero
         <button onClick={() => {
-          console.log("1");
+          // console.log("1");
           props.createNewHero();
-          console.log("2");
+          props.setIsCreating(true);
+          // console.log("2");
           history.push("/create");
-          console.log("2.5");
+          // console.log("2.5");
           // console.log("were cretinfsdffsd!!!!!!");
         }
         }>click</button>
@@ -50,7 +52,9 @@ let mapDispatchToProps = (dispatch) => {
   return {
     createNewHero: () => {
       dispatch(createNewHeroActionCreator());
-      dispatch(setIsCreatingActionCreator());
+    },
+    setIsCreating: (setting) => {
+      dispatch(setIsCreatingActionCreator(setting));
     },
   };
 };
