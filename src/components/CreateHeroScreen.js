@@ -20,6 +20,37 @@ import {
   increaseCharismaActionCreator,
   decreaseCharismaActionCreator,
 
+
+  increaseAttackActionCreator,
+  decreaseAttackActionCreator,
+
+  increaseStealthActionCreator,
+  decreaseStealthActionCreator,
+
+  increaseArcheryActionCreator,
+  decreaseArcheryActionCreator,
+
+  increaseEducabilityActionCreator,
+  decreaseEducabilityActionCreator,
+
+  increaseSurvivabilityActionCreator,
+  decreaseSurvivabilityActionCreator,
+
+  increaseHealingActionCreator,
+  decreaseHealingActionCreator,
+
+  increaseIntimidationActionCreator,
+  decreaseIntimidationActionCreator,
+
+  increaseInsightActionCreator,
+  decreaseInsightActionCreator,
+
+  increaseAppearanceActionCreator,
+  decreaseAppearanceActionCreator,
+
+  increaseManipulationActionCreator,
+  decreaseManipulationActionCreator,
+  
   changeNameActionCreator
 } from "../store/reducers/heroesReducers";
 
@@ -52,7 +83,7 @@ function CreateHeroScreen(props) {
       } } />
 
 
-      {props.isCreating ? <h1>we are creating the hero now</h1> : <h1>we cannot create the hero now</h1>}
+      {props.isCreating ? <h1>we are creating the hero now</h1> : <h1>we cannot create the hero now, please back to main page</h1>}
       {(props.isCreating && 
       <div>
         {/* we're creating hero here. herohere =) */}
@@ -87,50 +118,91 @@ function CreateHeroScreen(props) {
         <br/>
         <div><u>STRENGTH GROUP</u></div>
         <div>Attack: {theHero.skills.strength.attack}
-          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength}>+</button>
-          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength}>-</button></div>
+          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength}
+            onClick={()=> props.increaseAttack(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength}
+            onClick={()=> props.decreaseAttack(theHero.id)}
+          >-</button></div>
         
         <br/>
         <div><u>AGILITY SKILLS</u></div>
         <div>Stealth: {theHero.skills.agility.stealth}
-          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility}>+</button>
-          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility}>-</button></div>
+          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility}
+            onClick={()=> props.increaseStealth(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility}
+            onClick={()=> props.decreaseStealth(theHero.id)}
+          >-</button></div>
 
         <div>Archery: {theHero.skills.agility.archery}
-          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility}>+</button>
-          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility}>-</button></div>
+          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility}
+            onClick={()=> props.increaseArchery(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility}
+            onClick={()=> props.decreaseArchery(theHero.id)}
+          >-</button></div>
 
         <br/>    
         <div><u>INTELLIGENCE SKILLS</u></div>
         <div>Educability: {theHero.skills.intelligence.educability}
-          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence}>+</button>
-          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence}>-</button></div>
+          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence}
+            onClick={()=> props.increaseEducability(theHero.id)}
+          
+          >+</button>
+          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence}
+            onClick={()=> props.decreaseEducability(theHero.id)}
+          >-</button></div>
 
         <div>Survivability: {theHero.skills.intelligence.survivability}
-          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence}>+</button>
-          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence}>-</button></div>
+          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence}
+            onClick={()=> props.increaseSurvivability(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence}
+            onClick={()=> props.decreaseSurvivability(theHero.id)}
+          >-</button></div>
 
         <div>Healing: {theHero.skills.intelligence.healing}
-          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence}>+</button>
-          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence}>-</button></div>
+          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence}
+            onClick={()=> props.increaseHealing(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence}
+            onClick={()=> props.decreaseHealing(theHero.id)}
+          >-</button></div>
 
         <br/>    
         <div><u>CHARISMA SKILLS</u></div>
         <div>Intimidation: {theHero.skills.charisma.intimidation}
-          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma}>+</button>
-          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma}>-</button></div>
+          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma}
+            onClick={()=> props.increaseIntimidation(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma}
+            onClick={()=> props.decreaseIntimidation(theHero.id)}
+          >-</button></div>
 
         <div>Insight: {theHero.skills.charisma.insight}
-          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma}>+</button>
-          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma}>-</button></div>
+          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma}
+            onClick={()=> props.increaseInsight(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma}
+            onClick={()=> props.decreaseInsight(theHero.id)}
+          >-</button></div>
 
         <div>Appearance: {theHero.skills.charisma.appearance}
-          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma}>+</button>
-          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma}>-</button></div>
+          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma}
+            onClick={()=> props.increaseAppearance(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma}
+            onClick={()=> props.decreaseAppearance(theHero.id)}
+          >-</button></div>
 
         <div>Manipulation: {theHero.skills.charisma.manipulation}
-          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma}>+</button>
-          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma}>-</button></div>
+          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma}
+            onClick={()=> props.increaseManipulation(theHero.id)}
+          >+</button>
+          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma}
+            onClick={()=> props.decreaseManipulation(theHero.id)}
+          >-</button></div>
          
       </div>
       )}
@@ -179,6 +251,77 @@ let mapDispatchToProps = (dispatch) => {
     },
     decreaseCharisma: (heroId) => {
       dispatch(decreaseCharismaActionCreator(heroId));
+    },
+
+
+    increaseAttack: (heroId) => {
+      dispatch(increaseAttackActionCreator(heroId));
+    },
+    decreaseAttack: (heroId) => {
+      dispatch(decreaseAttackActionCreator(heroId));
+    },
+
+    increaseStealth: (heroId) => {
+      dispatch(increaseStealthActionCreator(heroId));
+    },
+    decreaseStealth: (heroId) => {
+      dispatch(decreaseStealthActionCreator(heroId));
+    },
+
+    increaseArchery: (heroId) => {
+      dispatch(increaseArcheryActionCreator(heroId));
+    },
+    decreaseArchery: (heroId) => {
+      dispatch(decreaseArcheryActionCreator(heroId));
+    },
+
+    increaseEducability: (heroId) => {
+      dispatch(increaseEducabilityActionCreator(heroId));
+    },
+    decreaseEducability: (heroId) => {
+      dispatch(decreaseEducabilityActionCreator(heroId));
+    },
+
+    increaseSurvivability: (heroId) => {
+      dispatch(increaseSurvivabilityActionCreator(heroId));
+    },
+    decreaseSurvivability: (heroId) => {
+      dispatch(decreaseSurvivabilityActionCreator(heroId));
+    },
+    
+    increaseHealing: (heroId) => {
+      dispatch(increaseHealingActionCreator(heroId));
+    },
+    decreaseHealing: (heroId) => {
+      dispatch(decreaseHealingActionCreator(heroId));
+    },
+
+    increaseIntimidation: (heroId) => {
+      dispatch(increaseIntimidationActionCreator(heroId));
+    },
+    decreaseIntimidation: (heroId) => {
+      dispatch(decreaseIntimidationActionCreator(heroId));
+    },
+
+    increaseInsight: (heroId) => {
+      dispatch(increaseInsightActionCreator(heroId));
+    },
+    decreaseInsight: (heroId) => {
+      dispatch(decreaseInsightActionCreator(heroId));
+    },
+
+    increaseAppearance: (heroId) => {
+      dispatch(increaseAppearanceActionCreator(heroId));
+    },
+    decreaseAppearance: (heroId) => {
+      dispatch(decreaseAppearanceActionCreator(heroId));
+    },
+
+    increaseManipulation: (heroId) => {
+      dispatch(increaseManipulationActionCreator(heroId));
+    },
+    decreaseManipulation: (heroId) => {
+      dispatch(decreaseManipulationActionCreator(heroId));
     },
 
     changeName: (heroId, name) => {
