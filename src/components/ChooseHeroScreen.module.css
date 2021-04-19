@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap");
+.cyberWrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  /* background-color: #1e1c22;
+  background-color: #fefe33; */
+
+  /* SVG chip/microcircuit */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cdefs%3E%3Cfilter id='shadow'%3E%3CfeDropShadow dx='0.2' dy='0.4' stdDeviation='0.2'/%3E%3C/filter%3E%3Cfilter id='shadow2'%3E%3CfeDropShadow dx='0' dy='0' stdDeviation='2.9' flood-color='cyan'/%3E%3C/filter%3E%3Cfilter id='shadow3'%3E%3CfeDropShadow dx='-0.8' dy='-0.8' stdDeviation='0' flood-color='pink' flood-opacity='0.5'/%3E%3C/filter%3E%3C/defs%3E%3Cpath cx='15' cy='50%25' r='4' style='filter:url(%23shadow2)' fill='%2319181c' fill-opacity='0.4' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* .cyberWrapper div {
+  position: relative;
+} */
+
+/* header  */
+.cyberWrapper .cyberP {
+  color: cyan;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-family: "Orbitron";
+  font-weight: 900;
+  letter-spacing: -1px;
+  padding: 2rem;
+  text-shadow: 5px 5px 5px black, 5px 5px 10px black, 5px 5px 15px black,
+    5px 5px 10px black, 5px 5px 15px black, 5px 5px 10px black,
+    5px 5px 15px black;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* .cyberWrapper .cyberName {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-family: "Orbitron";
+  font-weight: 900;
+  letter-spacing: -1px;
+  padding: 2rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+} */
+
+/* casual horizontal line ;) */
+.cyberHr {
+  border: none;
+  height: 20px;
+  width: 90%;
+  height: 50px;
+  margin-top: 0;
+  border-bottom: 1px solid cyan;
+  box-shadow: 0 20px 20px -20px aqua;
+  margin: -50px auto 10px;
+}
+
+/* font for delete/hit buttons */
+@font-face {
+  font-family: Cyber;
+  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+  font-display: swap;
+}
+
+/* * {
+  box-sizing: border-box;
+} */
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Cyber", sans-serif;
+  background-color: black;
+  /* background: linear-gradient(90deg, #f5ed00 70%, #e6de00 70%), #fff700; */
+}
+
+/* body .cybrBtn + .cybrBtn {
+  margin-top: 2rem;
+} */
+
+/* hit the hero and delete buttons */
+.cybrBtn {
+  --primary: hsl(
+    var(--primary-hue),
+    85%,
+    calc(var(--primary-lightness, 50) * 1%)
+  );
+  --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
+  --primary-hue: 0;
+  --primary-lightness: 50;
+  --color: hsl(0, 0%, 100%);
+  --font-size: 26px;
+  --shadow-primary-hue: 180;
+  --label-size: 9px;
+  --shadow-secondary-hue: 60;
+  --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
+  --clip: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    95% 100%,
+    95% 90%,
+    85% 90%,
+    85% 100%,
+    8% 100%,
+    0 70%
+  );
+  --border: 4px;
+  --shimmy-distance: 5;
+  --clip-one: polygon(
+    0 2%,
+    100% 2%,
+    100% 95%,
+    95% 95%,
+    95% 90%,
+    85% 90%,
+    85% 95%,
+    8% 95%,
+    0 70%
+  );
+  --clip-two: polygon(
+    0 78%,
+    100% 78%,
+    100% 100%,
+    95% 100%,
+    95% 90%,
+    85% 90%,
+    85% 100%,
+    8% 100%,
+    0 78%
+  );
+  --clip-three: polygon(
+    0 44%,
+    100% 44%,
+    100% 54%,
+    95% 54%,
+    95% 54%,
+    85% 54%,
+    85% 54%,
+    8% 54%,
+    0 54%
+  );
+  --clip-four: polygon(
+    0 0,
+    100% 0,
+    100% 0,
+    95% 0,
+    95% 0,
+    85% 0,
+    85% 0,
+    8% 0,
+    0 0
+  );
+  --clip-five: polygon(
+    0 0,
+    100% 0,
+    100% 0,
+    95% 0,
+    95% 0,
+    85% 0,
+    85% 0,
+    8% 0,
+    0 0
+  );
+  --clip-six: polygon(
+    0 40%,
+    100% 40%,
+    100% 85%,
+    95% 85%,
+    95% 85%,
+    85% 85%,
+    85% 85%,
+    8% 85%,
+    0 70%
+  );
+  --clip-seven: polygon(
+    0 63%,
+    100% 63%,
+    100% 80%,
+    95% 80%,
+    95% 80%,
+    85% 80%,
+    85% 80%,
+    8% 80%,
+    0 70%
+  );
+  font-family: "Cyber", sans-serif;
+  color: var(--color);
+  cursor: pointer;
+  background: transparent;
+  text-transform: uppercase;
+  font-size: var(--font-size);
+  outline: transparent;
+  letter-spacing: 2px;
+  position: relative;
+  font-weight: 700;
+  border: 0;
+  min-width: 300px;
+  height: 75px;
+  line-height: 75px;
+  transition: background 0.2s;
+}
+
+.cybrBtn:hover {
+  --primary: hsl(
+    var(--primary-hue),
+    85%,
+    calc(var(--primary-lightness, 50) * 0.8%)
+  );
+}
+.cybrBtn:active {
+  --primary: hsl(
+    var(--primary-hue),
+    85%,
+    calc(var(--primary-lightness, 50) * 0.6%)
+  );
+}
+
+.cybrBtn:after,
+.cybrBtn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip-path: var(--clip);
+  z-index: -1;
+}
+
+.cybrBtn:before {
+  background: var(--shadow-primary);
+  transform: translate(var(--border), 0);
+}
+
+.cybrBtn:after {
+  background: var(--primary);
+}
+
+.cybrBtnTag {
+  position: absolute;
+  padding: 1px 4px;
+  letter-spacing: 1px;
+  line-height: 1;
+  bottom: -5%;
+  right: 5%;
+  font-weight: normal;
+  color: hsl(0, 0%, 0%);
+  font-size: var(--label-size);
+}
+
+.cybrBtnGlitch {
+  position: absolute;
+  top: calc(var(--border) * -1);
+  left: calc(var(--border) * -1);
+  right: calc(var(--border) * -1);
+  bottom: calc(var(--border) * -1);
+  background: var(--shadow-primary);
+  text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+  clip-path: var(--clip);
+  animation: glitch 2s infinite;
+  display: none;
+}
+
+.cybrBtn:hover .cybrBtnGlitch {
+  display: block;
+}
+
+.cybrBtnGlitch:before {
+  content: "";
+  position: absolute;
+  top: calc(var(--border) * 1);
+  right: calc(var(--border) * 1);
+  bottom: calc(var(--border) * 1);
+  left: calc(var(--border) * 1);
+  clip-path: var(--clip);
+  background: var(--primary);
+  z-index: -1;
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--clip-one);
+  }
+  2%,
+  8% {
+    clip-path: var(--clip-two);
+    transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+  }
+  6% {
+    clip-path: var(--clip-two);
+    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+  }
+  9% {
+    clip-path: var(--clip-two);
+    transform: translate(0, 0);
+  }
+  10% {
+    clip-path: var(--clip-three);
+    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+  }
+  13% {
+    clip-path: var(--clip-three);
+    transform: translate(0, 0);
+  }
+  14%,
+  21% {
+    clip-path: var(--clip-four);
+    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+  }
+  25% {
+    clip-path: var(--clip-five);
+    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+  }
+  30% {
+    clip-path: var(--clip-five);
+    transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+  }
+  35%,
+  45% {
+    clip-path: var(--clip-six);
+    transform: translate(calc(var(--shimmy-distance) * -1%));
+  }
+  40% {
+    clip-path: var(--clip-six);
+    transform: translate(calc(var(--shimmy-distance) * 1%));
+  }
+  50% {
+    clip-path: var(--clip-six);
+    transform: translate(0, 0);
+  }
+  55% {
+    clip-path: var(--clip-seven);
+    transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+  }
+  60% {
+    clip-path: var(--clip-seven);
+    transform: translate(0, 0);
+  }
+  31%,
+  61%,
+  100% {
+    clip-path: var(--clip-four);
+  }
+}
+
+.cybrBtn:nth-of-type(2) {
+  --primary-hue: 260;
+}
+
+/* status when maximum number of heroes reached */
+
+.maximumNumberOfHeroesStatusContainer {
+  padding-top: 0.5em;
+  padding-bottom: 1.5em;
+}
+.maximumNumberOfHeroesStatus {
+  font-family: "Orbitron";
+  font-size: 1.42rem;
+  /* padding-bottom: 2em; */
+}
+
+/* label with name and id */
+.formLabel {
+  background-color: var(--colors-primary--600);
+  color: var(--colors-on_primary--500);
+  font-family: var(--fonts-secondary);
+  font-family: "Orbitron";
+  font-size: 1.42rem;
+  /* font-size: 0.92rem; */
+  display: inline-block;
+  padding: 0.125em 0.75em;
+  padding-right: 2em;
+  letter-spacing: 0.065em;
+  line-height: 1;
+  text-transform: uppercase;
+  vertical-align: bottom; /* inline-block fix */
+  clip-path: polygon(
+    0.25em 0,
+    calc(100% - 1em) 0,
+    100% 100%,
+    0.33em 100%,
+    0 100%,
+    0 0.25em
+  );
+}
+
+/* card with stats (vitality, dodge, etc.) */
+.formControl {
+  background-color: var(--colors-bg--300);
+  border: 1px solid var(--colors-primary--600);
+  clip-path: var(--ui-notch-path);
+  padding-right: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-family: "Orbitron";
+  font-weight: 900;
+  letter-spacing: 0px;
+}
+
+.formControl::before {
+  background-color: var(--colors-primary--600);
+  bottom: 5px;
+  content: "";
+  display: block;
+  height: 3px; /* bigger to compensate transform */
+  position: absolute;
+  right: -6px;
+  top: auto;
+  transform: rotate(-45deg);
+  width: var(--ui-notch-hypotenuse);
+  z-index: 100;
+}
+
+.formControl .cyberInput,
+.formControl .cyberTextarea {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--colors-primary--500);
+  font-family: var(--fonts-primary);
+  font-size: 1rem;
+  letter-spacing: 0.045em;
+  outline: none;
+  padding: 0.5rem;
+  resize: none;
+  width: 100%;
+}
+
+/* inside of card with stats */
+.cardStats {
+  padding-left: 1em;
+  padding-right: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* for prevent display jumping */
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html,
+body {
+  --colors-bg--300: #1e181e;
+  --colors-bg--500: #191a1e;
+  --colors-primary--200: #f4908b;
+  --colors-primary--300: #ea6f69;
+  --colors-primary--500: #e8615a;
+  --colors-primary--600: #9c3230;
+  --colors-primary--700: #5e2122;
+  --colors-primary--800: #451717;
+  --colors-primary--900: #3c181a;
+  --colors-secondary--500: #2be4ea;
+  --colors-secondary--900: #295459;
+  --colors-tertiary--500: #fed33f;
+  --colors-on_bg--500: var(--colors-primary--500);
+  --colors-on_tertiary--500: var(--colors-bg--300);
+  --colors-on_primary--500: var(--colors-primary--200);
+  --colors-active--500: #2bfea0;
+  --fonts-primary: "Rajdhani", sans-serif;
+  --fonts-secondary: "VT323", monospace;
+  --ui-glow: 0 0 5px var(--colors-primary--500);
+  --ui-glow-borders--500: 0 0 3px var(--colors-primary--500);
+  --ui-glow-color: currentcolor;
+  --ui-glow-text: -9px -6px 40px var(--ui-glow-color);
+  --ui-glow-text--dimmed: -9px -6px 40px var(--ui-glow-color);
+  --ui-elevation--1: 2px 2px 0 rgba(0, 0, 0, 0.8);
+  --ui-notch-amount: 1rem;
+  --ui-notch-hypotenuse: 22.627416px; /* hypothenuse of --ui-notch-amount */
+  --ui-notch-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--ui-notch-amount) + 2px),
+    calc(100% - var(--ui-notch-amount) + 2px) 100%,
+    0 100%
+  );
+
+  /* uncomment below for red gradient at the background */
+  /* background-color: var(--colors-bg--500);
+  background-image: radial-gradient(
+    ellipse at 33% 10%,
+    #461616 0%,
+    transparent 75%
+  ); */
+
+  background-repeat: no-repeat;
+  color: var(--colors-on_bg--500);
+  font-family: var(--fonts-primary);
+  font-size: 100%;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* create new hero button */
+.buttonCreateNewHero {
+  background-color: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--fonts-primary);
+  letter-spacing: 0.045em;
+  padding: 0.45rem;
+  text-align: left;
+  text-transform: uppercase;
+  border-width: 2px;
+  clip-path: var(--ui-notch-path);
+  padding: 0.55rem 0.7rem 0.7rem 0.55rem;
+  margin-bottom: 1em;
+
+  /* display: block; */
+  width: 34em;
+  color: cyan;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: "Orbitron";
+  font-weight: 900;
+  letter-spacing: 0px;
+  /* border: none; */
+  /* background-color: #4caf50; */
+  /* padding: 14px 28px; */
+  /* font-size: 16px; */
+  /* cursor: pointer; */
+  text-align: center;
+  /* red */
+  /* color: var(--colors-primary--500);
+  border: 1px solid var(--colors-primary--500); */
+  /* cyan */
+  color: var(--colors-secondary--500);
+  border-color: var(--colors-secondary--500);
+}
+
+.buttonCreateNewHero:hover {
+  /* red */
+  /* background-color: var(--colors-primary--800);
+  color: var(--colors-on_primary--500); */
+  /* cyan */
+  background-color: var(--colors-secondary--900);
+  color: var(--colors-secondary--500);
+}
+
+.buttonCreateNewHero::before {
+  background-color: currentcolor;
+  bottom: 5px;
+  content: "";
+  display: block;
+  height: 3px; /* bigger to compensate transform */
+  position: absolute;
+  right: -6px;
+  top: auto;
+  transform: rotate(-45deg);
+  width: var(--ui-notch-hypotenuse);
+  z-index: 100;
+}
