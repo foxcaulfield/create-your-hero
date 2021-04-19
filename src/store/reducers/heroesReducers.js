@@ -55,6 +55,9 @@ const DECREASE_MANIPULATION_ACTION_TYPE_HEROES_REDUCER = "DECREASE_MANIPULATION_
 //===== change character name =====
 const CHANGE_NAME_ACTION_TYPE_HEROES_REDUCER = "CHANGE_NAME_ACTION_TYPE_HEROES_REDUCER";
 
+// ===== set uploaded hero =====
+const SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER = "SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER";
+
 const initialState = {
   initialName: "Samwise Gamgee",
   initialBaseParameters: {
@@ -509,6 +512,31 @@ function heroesReducer(state = initialState, action) {
         // baseParameters: {...state.heroes[action.heroId-1].baseParameters, charisma: state.heroes[action.heroId-1].baseParameters.charisma-1 },
       })
     };
+
+    // ===== set uploaded hero ===== 
+  case SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER:
+    // console.log("i'm here");
+    return {
+      ...state,
+      heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
+        name: "Saruman of many colors"
+        // baseParameters: {...state.heroes[action.heroId-1].baseParameters, charisma: state.heroes[action.heroId-1].baseParameters.charisma-1 },
+      })
+    };
+    
+    // return {
+    //   ...state,
+    //   heroes: [...state.heroes, {
+    //     name: state.initialName,
+    //     id:state.heroes.length+1,
+    //     parameterPoints: state.initialParameterPoints,
+    //     skillPoints: state.initialSkillPoints,
+    //     baseParameters: state.initialBaseParameters,
+    //     calculatedParameters: state.initialCalculatedParameters,
+    //     skills: state.initialSkills
+    //   }
+    //   ]
+    // };
     
   default: {
     return state;
@@ -749,6 +777,15 @@ export function decreaseManipulationActionCreator(heroId){
 export function changeNameActionCreator(heroId, name){
   return {
     type: CHANGE_NAME_ACTION_TYPE_HEROES_REDUCER,
+    heroId,
+    name
+  };
+}
+
+//change name
+export function setUploadedHeroActionCreator(heroId, name){
+  return {
+    type: SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER,
     heroId,
     name
   };

@@ -51,8 +51,13 @@ import {
   increaseManipulationActionCreator,
   decreaseManipulationActionCreator,
   
-  changeNameActionCreator
+  changeNameActionCreator,
+
+  setUploadedHeroActionCreator
+
 } from "../store/reducers/heroesReducers";
+
+import DownloaderUploader from "../utils/DownloadUploadHero";
 
 function CreateHeroScreen(props) {
   // let history = useHistory();
@@ -86,6 +91,7 @@ function CreateHeroScreen(props) {
       {props.isCreating ? <h1>we are creating the hero now</h1> : <h1>we cannot create the hero now, please back to main page</h1>}
       {(props.isCreating && 
       <div>
+        <DownloaderUploader hero={theHero}/>
         {/* we're creating hero here. herohere =) */}
         <div>Name: {theHero.name}</div>
         <input placeholder="Enter name" onChange={(event)=> props.changeName(theHero.id, event.target.value)}></input>
@@ -95,14 +101,45 @@ function CreateHeroScreen(props) {
         <div><strong>BASIC PARAMETRS</strong></div>
         <div><em>Available parameter points: {theHero.parameterPoints}</em></div>
         <br/>
+        {/* <button onClick={()=> props.setUploadedHero(theHero.id, "Man")}>Change it</button> */}
         <div>Strength: {theHero.baseParameters.strength}
-          <button onClick={()=> props.increaseStrength(theHero.id)}>+</button><button onClick={()=> props.decreaseStrength(theHero.id)}>-</button></div>
+          <button onClick={()=> props.increaseStrength(theHero.id)}
+            disabled={theHero.parameterPoints === 0}
+          >+</button>
+
+          <button onClick={()=> props.decreaseStrength(theHero.id)}
+            disabled={theHero.baseParameters.strength === 0}
+          >-</button></div>
+
+
         <div>Agility: {theHero.baseParameters.agility}
-          <button onClick={()=> props.increaseAgility(theHero.id)}>+</button><button onClick={()=> props.decreaseAgility(theHero.id)}>-</button></div>
+          <button onClick={()=> props.increaseAgility(theHero.id)}
+            disabled={theHero.parameterPoints === 0}
+          >+</button>
+
+          <button onClick={()=> props.decreaseAgility(theHero.id)}
+            disabled={theHero.baseParameters.agility === 0}
+          >-</button></div>
+
+
         <div>Intelligence: {theHero.baseParameters.intelligence}
-          <button onClick={()=> props.increaseIntelligence(theHero.id)}>+</button><button onClick={()=> props.decreaseIntelligence(theHero.id)}>-</button></div>
+          <button onClick={()=> props.increaseIntelligence(theHero.id)}
+            disabled={theHero.parameterPoints === 0}
+          >+</button>
+
+          <button onClick={()=> props.decreaseIntelligence(theHero.id)}
+            disabled={theHero.baseParameters.intelligence === 0}
+          >-</button></div>
+
+
         <div>Charisma: {theHero.baseParameters.charisma}
-          <button onClick={()=> props.increaseCharisma(theHero.id)}>+</button><button onClick={()=> props.decreaseCharisma(theHero.id)}>-</button></div>
+          <button onClick={()=> props.increaseCharisma(theHero.id)}
+            disabled={theHero.parameterPoints === 0}
+          >+</button>
+
+          <button onClick={()=> props.decreaseCharisma(theHero.id)}
+            disabled={theHero.baseParameters.charisma === 0}
+          >-</button></div>
         <hr/>
       
         {/* <br/> */}
@@ -115,94 +152,130 @@ function CreateHeroScreen(props) {
         {/* <br/> */}
         <div><strong>SKILLS</strong></div>
         <div><em>Available skill points:{theHero.skillPoints}</em></div>
+
+
         <br/>
-        <div><u>STRENGTH GROUP</u></div>
-        <div>Attack: {theHero.skills.strength.attack}
-          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength}
+        <div><u>STRENGTH SKILLS</u></div>
+        <div>Attack: {theHero.skills.strength.attack} 
+          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength || theHero.skillPoints === 0 || theHero.skills.strength.attack >=props.levelsNames.length-1}
             onClick={()=> props.increaseAttack(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.strength.attack >= theHero.baseParameters.strength}
+
+          <button disabled={theHero.skills.strength.attack === 0}
             onClick={()=> props.decreaseAttack(theHero.id)}
-          >-</button></div>
+          >-</button>
+          {props.levelsNames[theHero.skills.strength.attack]}
+        </div>
         
+
         <br/>
         <div><u>AGILITY SKILLS</u></div>
-        <div>Stealth: {theHero.skills.agility.stealth}
-          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility}
+        <div>Stealth: {theHero.skills.agility.stealth} 
+          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility || theHero.skillPoints === 0 || theHero.skills.agility.stealth >=props.levelsNames.length-1}
             onClick={()=> props.increaseStealth(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.agility.stealth >= theHero.baseParameters.agility}
-            onClick={()=> props.decreaseStealth(theHero.id)}
-          >-</button></div>
 
-        <div>Archery: {theHero.skills.agility.archery}
-          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility}
+          <button disabled={theHero.skills.agility.stealth === 0}
+            onClick={()=> props.decreaseStealth(theHero.id)}
+          >-</button>
+          {props.levelsNames[theHero.skills.agility.stealth]}
+        </div>
+
+
+        <div>Archery: {theHero.skills.agility.archery} 
+          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility || theHero.skillPoints === 0 || theHero.skills.agility.archery >=props.levelsNames.length-1}
             onClick={()=> props.increaseArchery(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.agility.archery >= theHero.baseParameters.agility}
+
+          <button disabled={theHero.skills.agility.archery === 0}
             onClick={()=> props.decreaseArchery(theHero.id)}
-          >-</button></div>
+          >-</button>
+          {props.levelsNames[theHero.skills.agility.archery]}
+        </div>
+
 
         <br/>    
         <div><u>INTELLIGENCE SKILLS</u></div>
-        <div>Educability: {theHero.skills.intelligence.educability}
-          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence}
+        <div>Educability: {theHero.skills.intelligence.educability} 
+          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence || theHero.skillPoints === 0 || theHero.skills.intelligence.educability >=props.levelsNames.length-1}
             onClick={()=> props.increaseEducability(theHero.id)}
-          
           >+</button>
-          <button disabled={theHero.skills.intelligence.educability >= theHero.baseParameters.intelligence}
-            onClick={()=> props.decreaseEducability(theHero.id)}
-          >-</button></div>
 
-        <div>Survivability: {theHero.skills.intelligence.survivability}
-          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence}
+          <button disabled={theHero.skills.intelligence.educability === 0}
+            onClick={()=> props.decreaseEducability(theHero.id)}
+          >-</button>
+          {props.levelsNames[theHero.skills.intelligence.educability]}
+        </div>
+
+
+        <div>Survivability: {theHero.skills.intelligence.survivability} 
+          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence || theHero.skillPoints === 0 || theHero.skills.intelligence.survivability >=props.levelsNames.length-1}
             onClick={()=> props.increaseSurvivability(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.intelligence.survivability >= theHero.baseParameters.intelligence}
-            onClick={()=> props.decreaseSurvivability(theHero.id)}
-          >-</button></div>
 
-        <div>Healing: {theHero.skills.intelligence.healing}
-          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence}
+          <button disabled={theHero.skills.intelligence.survivability === 0}
+            onClick={()=> props.decreaseSurvivability(theHero.id)}
+          >-</button>
+          {props.levelsNames[theHero.skills.intelligence.survivability]}
+        </div>
+
+
+        <div>Healing: {theHero.skills.intelligence.healing} 
+          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence || theHero.skillPoints === 0 || theHero.skills.intelligence.healing >=props.levelsNames.length-1}
             onClick={()=> props.increaseHealing(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.intelligence.healing >= theHero.baseParameters.intelligence}
+
+          <button disabled={theHero.skills.intelligence.healing === 0}
             onClick={()=> props.decreaseHealing(theHero.id)}
-          >-</button></div>
+          >-</button>
+          {props.levelsNames[theHero.skills.intelligence.healing]}
+        </div>
+
 
         <br/>    
         <div><u>CHARISMA SKILLS</u></div>
-        <div>Intimidation: {theHero.skills.charisma.intimidation}
-          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma}
+        <div>Intimidation: {theHero.skills.charisma.intimidation} 
+          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma || theHero.skillPoints === 0 || theHero.skills.charisma.intimidation >=props.levelsNames.length-1}
             onClick={()=> props.increaseIntimidation(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.charisma.intimidation >= theHero.baseParameters.charisma}
+          <button disabled={theHero.skills.charisma.intimidation === 0}
             onClick={()=> props.decreaseIntimidation(theHero.id)}
-          >-</button></div>
+          >-</button>
+          {props.levelsNames[theHero.skills.charisma.intimidation]}
+        </div>
 
-        <div>Insight: {theHero.skills.charisma.insight}
-          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma}
+
+        <div>Insight: {theHero.skills.charisma.insight} 
+          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma || theHero.skillPoints === 0 || theHero.skills.charisma.insight >=props.levelsNames.length-1}
             onClick={()=> props.increaseInsight(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.charisma.insight >= theHero.baseParameters.charisma}
+          <button disabled={theHero.skills.charisma.insight === 0}
             onClick={()=> props.decreaseInsight(theHero.id)}
-          >-</button></div>
+          >-</button>
+          {props.levelsNames[theHero.skills.charisma.insight]}
+        </div>
 
-        <div>Appearance: {theHero.skills.charisma.appearance}
-          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma}
+
+        <div>Appearance: {theHero.skills.charisma.appearance} 
+          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma || theHero.skillPoints === 0 || theHero.skills.charisma.appearance >=props.levelsNames.length-1}
             onClick={()=> props.increaseAppearance(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.charisma.appearance >= theHero.baseParameters.charisma}
+          <button disabled={theHero.skills.charisma.appearance === 0}
             onClick={()=> props.decreaseAppearance(theHero.id)}
-          >-</button></div>
+          >-</button>
+          {props.levelsNames[theHero.skills.charisma.appearance]}
+        </div>
 
-        <div>Manipulation: {theHero.skills.charisma.manipulation}
-          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma}
+
+        <div>Manipulation: {theHero.skills.charisma.manipulation} 
+          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma || theHero.skillPoints === 0 || theHero.skills.charisma.manipulation >=props.levelsNames.length-1}
             onClick={()=> props.increaseManipulation(theHero.id)}
           >+</button>
-          <button disabled={theHero.skills.charisma.manipulation >= theHero.baseParameters.charisma}
+          <button disabled={theHero.skills.charisma.manipulation === 0}
             onClick={()=> props.decreaseManipulation(theHero.id)}
-          >-</button></div>
+          >-</button>
+          {props.levelsNames[theHero.skills.charisma.manipulation]}
+        </div>
          
       </div>
       )}
@@ -326,6 +399,10 @@ let mapDispatchToProps = (dispatch) => {
 
     changeName: (heroId, name) => {
       dispatch(changeNameActionCreator(heroId, name));
+    },
+
+    setUploadedHero: (heroId, name) => {
+      dispatch(setUploadedHeroActionCreator(heroId, name));
     },
   };
 };
