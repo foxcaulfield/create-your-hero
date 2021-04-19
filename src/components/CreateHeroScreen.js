@@ -1,8 +1,8 @@
 import React 
-//  { useEffect } 
+, { useState }//  { useEffect } 
   from "react";
 import { connect } from "react-redux";
-import { Prompt } from "react-router";
+import { Prompt, useHistory } from "react-router";
 // import { useHistory } from "react-router";
 import {
   createNewHeroActionCreator,
@@ -60,11 +60,12 @@ import {
 import DownloaderUploader from "../utils/DownloadUploadHero";
 
 function CreateHeroScreen(props) {
-  // let history = useHistory();
+  let history = useHistory();
 
   //set the proper hero
   let theHero = props.heroes[props.heroes.length-1];
 
+  const [isNameEditing, setIsNameEditing] = useState(false);
 
   // let theHero = props.heroes[0];
   // {props.isCreating? console.log("is cr true") : console.log("is cr false"); }
@@ -86,17 +87,27 @@ function CreateHeroScreen(props) {
         props.setIsCreating(false);
         // console.log("props.isCreating", props.isCreating);
       } } />
-
-
-      {props.isCreating ? <h1>we are creating the hero now</h1> : <h1>we cannot create the hero now, please back to main page</h1>}
+      <button onClick={() => { history.push("/choose"); }}>Save and back to main</button>
+      <hr/>
+      {props.isCreating ? <div><strong>we are creating the hero now</strong><br/><span>spend available skillpoints to improve your hero</span><hr/></div> : <h1>we cannot create the hero now, please back to main page</h1>}
       {(props.isCreating && 
       <div>
         <DownloaderUploader hero={theHero} handleSetUploadedHero={props.setUploadedHero}/>
         {/* we're creating hero here. herohere =) */}
-        <div>Name: {theHero.name}</div>
-        <input placeholder="Enter name" onChange={(event)=> props.changeName(theHero.id, event.target.value)}></input>
+        <hr/><hr/><hr/>
+        <div>Name: 
+          {!isNameEditing && theHero.name} 
+          {isNameEditing && 
+          <input placeholder={theHero.name} 
+            value={theHero.name} 
+            onChange={(event)=> props.changeName(theHero.id, event.target.value)} 
+            onBlur={(event)=> {theHero.name ? props.changeName(theHero.id, event.target.value) : props.changeName(theHero.id, "Meriadoc Brandybuck"); setIsNameEditing(false);}}></input>}
+          <br/>
+          {!isNameEditing && <button onClick={()=> setIsNameEditing(true)}>Edit</button>}
+          {isNameEditing && theHero.name && <button onClick={()=> setIsNameEditing(false)}>Save</button>}
+        </div>
+        
         <div>id: {theHero.id}</div>
-        <br/>
         <hr/>
         <div><strong>BASIC PARAMETRS</strong></div>
         <div><em>Available parameter points: {theHero.parameterPoints}</em></div>

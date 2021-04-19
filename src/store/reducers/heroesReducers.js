@@ -1,8 +1,13 @@
 import { updateObjectInArray } from "../../utils/ObjectInArrayHelper";
 
-// const KICK_ACTION_CREATOR = "KICK_ACTION_CREATOR";
-const CREATE_NEW_HERO_ACTION_TYPE_HEROES_REDUCER = "CREATE_NEW_HERO_ACTION_TYPE_HEROES_REDUCER";
+const HIT_THE_HERO_ACTION_CREATOR = "HIT_THE_HERO_ACTION_CREATOR";
+
 const SET_IS_CREATING_ACTION_TYPE_HEROES_REDUCER = "SET_IS_CREATING_ACTION_TYPE_HEROES_REDUCER";
+
+const CREATE_NEW_HERO_ACTION_TYPE_HEROES_REDUCER = "CREATE_NEW_HERO_ACTION_TYPE_HEROES_REDUCER";
+
+// ===== delete the hero =====
+const DELETE_THE_HERO_ACTION_TYPE_HEROES_REDUCER = "DELETE_THE_HERO_ACTION_TYPE_HEROES_REDUCER";
 
 //=====stats actions=====
 const INCREASE_STRENGTH_ACTION_TYPE_HEROES_REDUCER = "INCREASE_STRENGTH_ACTION_TYPE_HEROES_REDUCER";
@@ -57,6 +62,7 @@ const CHANGE_NAME_ACTION_TYPE_HEROES_REDUCER = "CHANGE_NAME_ACTION_TYPE_HEROES_R
 
 // ===== set uploaded hero =====
 const SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER = "SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER";
+
 
 const initialState = {
   initialName: "Sam Gamgee",
@@ -134,15 +140,21 @@ const initialState = {
   initialParameterPoints:15,
   initialSkillPoints:10,
   isCreating: false,
+  maximumNumberOfHeroes: 5
 };
 
 function heroesReducer(state = initialState, action) {
   switch (action.type) {
-  // case KICK_ACTION_CREATOR:
-  //   return {
-  //     state,
-  //     //  calculatedParameters.vitality - 1
-  //   };
+  case HIT_THE_HERO_ACTION_CREATOR:
+    // alert("imhere");
+    return {
+      ...state,
+      heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
+        // parameterPoints: state.heroes[action.heroId-1].parameterPoints-1,
+        // baseParameters: {...state.heroes[action.heroId-1].baseParameters, strength: state.heroes[action.heroId-1].baseParameters.strength+1 },
+        calculatedParameters: {...state.heroes[action.heroId-1].calculatedParameters, vitality: state.heroes[action.heroId-1].calculatedParameters.vitality-1}
+      })
+    };
 
   case SET_IS_CREATING_ACTION_TYPE_HEROES_REDUCER:
     // console.log("i'm here");
@@ -157,7 +169,8 @@ function heroesReducer(state = initialState, action) {
       ...state,
       heroes: [...state.heroes, {
         name: state.initialName,
-        id:state.heroes.length+1,
+        id: state.heroes.length ? state.heroes[state.heroes.length-1].id+1 : 1,
+        // id:state.heroes.length+1,
         parameterPoints: state.initialParameterPoints,
         skillPoints: state.initialSkillPoints,
         baseParameters: state.initialBaseParameters,
@@ -165,6 +178,13 @@ function heroesReducer(state = initialState, action) {
         skills: state.initialSkills
       }
       ]
+    };
+
+  case DELETE_THE_HERO_ACTION_TYPE_HEROES_REDUCER:
+    console.log("i'm here");
+    return {
+      ...state,
+      heroes: [...state.heroes].filter(hero => hero.id !== action.heroId)
     };
 
     // ===== actions with strength, pretty similar except for arithmetic operations =====
@@ -518,7 +538,10 @@ function heroesReducer(state = initialState, action) {
     console.log(action.uploadedHero);
     return {
       ...state,
-      heroes: updateObjectInArray(state.heroes, action.heroId, "id", action.uploadedHero
+      heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
+        ...action.uploadedHero,
+        id: action.heroId //  help to prevent duplicate heroes =)
+      }
       // {
         // name: action.uploadedHero
         // baseParameters: {...state.heroes[action.heroId-1].baseParameters, charisma: state.heroes[action.heroId-1].baseParameters.charisma-1 },
@@ -552,10 +575,24 @@ export function createNewHeroActionCreator(){
   };
 }
 
+export function deleteTheHeroActionCreator(heroId){
+  return {
+    type: DELETE_THE_HERO_ACTION_TYPE_HEROES_REDUCER,
+    heroId
+  };
+}
+
 export function setIsCreatingActionCreator(setting){
   return {
     type: SET_IS_CREATING_ACTION_TYPE_HEROES_REDUCER,
     setting
+  };
+}
+
+export function hitTheHeroActionCreator(heroId){
+  return {
+    type: HIT_THE_HERO_ACTION_CREATOR,
+    heroId
   };
 }
 

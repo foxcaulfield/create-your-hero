@@ -6,7 +6,7 @@ export default class DownloaderUploader extends React.Component {
     
     const defaultFileType = "json"; 
     this.fileNames = {
-      json: `${props.hero.name}.json`,
+      json: "hero.json",
       // csv: "hero.csv",
       // text: "hero.txt"
     };    
@@ -166,7 +166,7 @@ export default class DownloaderUploader extends React.Component {
   render() {
     return (
       <div>
-        <h2>You can download and upload your hero</h2>
+        <strong>You can download and upload your hero</strong>
         {/* <table>
           <thead>
           <tr><th>State</th><th>Electors</th></tr>
@@ -192,7 +192,7 @@ export default class DownloaderUploader extends React.Component {
           </select>
           
           <button onClick={this.download}>
-            Download the hero!
+            Download to JSON
           </button>
           
           <a hidden
@@ -201,9 +201,9 @@ export default class DownloaderUploader extends React.Component {
             ref={e=>this.dofileDownload = e}
           >download it</a>
           
-          <p><button onClick={this.upload}>
-            Upload the hero!
-          </button> Only json files are ok.</p>
+          <br/><button onClick={this.upload}>
+            Upload from JSON
+          </button>
 
           <input hidden type="file" className="hidden" //==============add HIDDEN attribute=============================================
             multiple={false}
@@ -213,6 +213,7 @@ export default class DownloaderUploader extends React.Component {
           />
         </form>
         {/* <pre className="status">{this.state.status}</pre> //============== for status of uploading check ============ */}
+        <hr/>
       </div>
     );
   }
