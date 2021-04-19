@@ -91,7 +91,7 @@ function CreateHeroScreen(props) {
       {props.isCreating ? <h1>we are creating the hero now</h1> : <h1>we cannot create the hero now, please back to main page</h1>}
       {(props.isCreating && 
       <div>
-        <DownloaderUploader hero={theHero}/>
+        <DownloaderUploader hero={theHero} handleSetUploadedHero={props.setUploadedHero}/>
         {/* we're creating hero here. herohere =) */}
         <div>Name: {theHero.name}</div>
         <input placeholder="Enter name" onChange={(event)=> props.changeName(theHero.id, event.target.value)}></input>
@@ -401,8 +401,8 @@ let mapDispatchToProps = (dispatch) => {
       dispatch(changeNameActionCreator(heroId, name));
     },
 
-    setUploadedHero: (heroId, name) => {
-      dispatch(setUploadedHeroActionCreator(heroId, name));
+    setUploadedHero: (heroId, uploadedHero) => {
+      dispatch(setUploadedHeroActionCreator(heroId, uploadedHero));
     },
   };
 };

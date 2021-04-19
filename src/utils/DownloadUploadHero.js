@@ -6,7 +6,7 @@ export default class DownloaderUploader extends React.Component {
     
     const defaultFileType = "json"; 
     this.fileNames = {
-      json: "hero.json",
+      json: `${props.hero.name}.json`,
       // csv: "hero.csv",
       // text: "hero.txt"
     };    
@@ -14,7 +14,7 @@ export default class DownloaderUploader extends React.Component {
       fileType: defaultFileType,
       fileDownloadUrl: null,
       status: "",
-      data: props.hero
+      data: props.hero //===========set data from props================================================
       // {
       //   name: "Frodo",
       //   id: 1,
@@ -69,7 +69,7 @@ export default class DownloaderUploader extends React.Component {
     let output;
     if (this.state.fileType === "json") {
       // output = JSON.stringify({hero: this.state.data}, 
-      output = JSON.stringify({hero: this.props.hero}, 
+      output = JSON.stringify({hero: this.props.hero}, //=====set object value======================================================
         null, 4);
     } 
     // else if (this.state.fileType === "csv"){
@@ -81,13 +81,13 @@ export default class DownloaderUploader extends React.Component {
     //   });
     //   output = this.makeCSV(contents);
     // } 
-    else if (this.state.fileType === "text"){
-      // Prepare data:
-      output = "";
-      this.state.data.forEach(row => {
-        output += `${row.state}: ${row.electors}\n`;
-      });
-    }
+    // else if (this.state.fileType === "text"){
+    //   // Prepare data:
+    //   output = "";
+    //   this.state.data.forEach(row => {
+    //     output += `${row.state}: ${row.electors}\n`;
+    //   });
+    // }
     // Download it
     const blob = new Blob([output]);
     const fileDownloadUrl = URL.createObjectURL(blob);
@@ -127,7 +127,7 @@ export default class DownloaderUploader extends React.Component {
   //   return csv;
   // }
   
-  upload(event) {
+  upload(event) {//====================add EVENT to props=======================================
     // console.log(event);
     event.preventDefault();
     this.dofileUpload.click();
@@ -137,24 +137,30 @@ export default class DownloaderUploader extends React.Component {
    * Process the file within the React app. We're NOT uploading it to the server!
    */
   openFile(evt) {
-    let status = []; // Status output
+    // let status = []; // Status output
     const fileObj = evt.target.files[0];
     const reader = new FileReader();
           
     let fileloaded = e => {
+      // console.log(JSON.parse(e.target.result).hero);
+      const uploadedHero = JSON.parse(e.target.result).hero; //=============get and parse result ==============================================
       // e.target.result is the file's content as text
-      const fileContents = e.target.result;
-      status.push(`File name: "${fileObj.name}". Length: ${fileContents.length} bytes.`);
-      // Show first 80 characters of the file
-      const first80char = fileContents.substring(0,80);
-      status.push (`First 80 characters of the file:\n${first80char}`);
-      this.setState ({status: status.join("\n")});
+
+      //=== set and show status(optional) ===
+      // const fileContents = e.target.result;
+      // status.push(`File name: "${fileObj.name}". Length: ${fileContents.length} bytes.`);
+      // // Show first 80 characters of the file
+      // const first80char = fileContents.substring(0,80);
+      // status.push (`First 80 characters of the file:\n${first80char}`);
+      // this.setState ({status: status.join("\n")});
+
+      this.props.handleSetUploadedHero(this.props.hero.id, uploadedHero);//=============add hero to state ==============================================
     };
       
     // Mainline of the method
     fileloaded = fileloaded.bind(this);
-    reader.onload = fileloaded;
     reader.readAsText(fileObj);  
+    reader.onload = fileloaded;
   }
   
   render() {
@@ -174,8 +180,8 @@ export default class DownloaderUploader extends React.Component {
         	</tbody>
         </table> */}
         <form>
-          <span hidden className="mr">File type:</span>
-          <select hidden name="fileType"
+          <span hidden className="mr">File type:</span> 
+          <select hidden name="fileType" //========add HIDDEN attribute===================================================
             onChange={this.changeFileType}
             value={this.state.fileType}
             className="mr"
@@ -190,7 +196,7 @@ export default class DownloaderUploader extends React.Component {
           </button>
           
           <a hidden
-            download={this.fileNames[this.state.fileType]}
+            download={this.fileNames[this.state.fileType]} //========add HIDDEN attribute===================================================
             href={this.state.fileDownloadUrl}
             ref={e=>this.dofileDownload = e}
           >download it</a>
@@ -199,14 +205,14 @@ export default class DownloaderUploader extends React.Component {
             Upload the hero!
           </button> Only json files are ok.</p>
 
-          <input hidden type="file" className="hidden"
+          <input hidden type="file" className="hidden" //==============add HIDDEN attribute=============================================
             multiple={false}
             accept=".json,application/json"
             onChange={evt => this.openFile(evt)}
             ref={e=>this.dofileUpload = e}
           />
         </form>
-        <pre className="status">{this.state.status}</pre>
+        {/* <pre className="status">{this.state.status}</pre> //============== for status of uploading check ============ */}
       </div>
     );
   }

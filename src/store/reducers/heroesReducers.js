@@ -59,7 +59,7 @@ const CHANGE_NAME_ACTION_TYPE_HEROES_REDUCER = "CHANGE_NAME_ACTION_TYPE_HEROES_R
 const SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER = "SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER";
 
 const initialState = {
-  initialName: "Samwise Gamgee",
+  initialName: "Sam Gamgee",
   initialBaseParameters: {
     strength: 0,
     agility: 0,
@@ -515,13 +515,15 @@ function heroesReducer(state = initialState, action) {
 
     // ===== set uploaded hero ===== 
   case SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER:
-    // console.log("i'm here");
+    console.log(action.uploadedHero);
     return {
       ...state,
-      heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-        name: "Saruman of many colors"
+      heroes: updateObjectInArray(state.heroes, action.heroId, "id", action.uploadedHero
+      // {
+        // name: action.uploadedHero
         // baseParameters: {...state.heroes[action.heroId-1].baseParameters, charisma: state.heroes[action.heroId-1].baseParameters.charisma-1 },
-      })
+      // }
+      )
     };
     
     // return {
@@ -783,11 +785,11 @@ export function changeNameActionCreator(heroId, name){
 }
 
 //change name
-export function setUploadedHeroActionCreator(heroId, name){
+export function setUploadedHeroActionCreator(heroId, uploadedHero){
   return {
     type: SET_UPLOADED_HERO_ACTION_TYPE_HEROES_REDUCER,
     heroId,
-    name
+    uploadedHero
   };
 }
 
