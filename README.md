@@ -1,4 +1,4 @@
-# 🐱‍👓 Create and customize your hero 🤖
+# 🤖 Create and customize your hero 🤖
 
 ## About
 
