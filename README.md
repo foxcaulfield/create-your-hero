@@ -34,14 +34,14 @@ Built with:
 - Edit name as desired, after you finished, click "Save"
   ![](./screenshots/screenshotName.png)
 
-- You can also save your hero to JSON file an upload it later 😎 Just use "Save
+- You can also save your hero to JSON file and upload it later 😎 Just use "Save
   to JSON" and "Upload from JSON" buttons  
   ![](./screenshots/screenshotJSON.png)
 
-- After you finished creating the hero, click the "Save and back to main button"
+- After you finished creating the hero, click "Save and back to main button"
   ![](./screenshots/screenshotBack.png)
 
-- You can hit or delete you hero just pressing proper buttons
+- You can hit or delete your hero just pressing proper buttons
   ![](./screenshots/screenshotHit.png)
 
 Happy hacking!🐱‍👤
