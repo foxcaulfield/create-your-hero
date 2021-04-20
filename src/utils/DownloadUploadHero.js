@@ -136,42 +136,44 @@ export default class DownloaderUploader extends React.Component {
           />
 
           {/* =============== */}
-          <button
-            // disabled={hero.calculatedParameters.vitality === 0}
-            onClick={
-              this.download
-              // alert(`${hero.name} was hit`);
-              // props.hitTheHero(hero.id);
-            }
-            className={classes.cybrBtn}
-          >
-            SAVE TO JSON
-            <span aria-hidden>_</span>
-            <span aria-hidden className={classes.cybrBtnGlitch}>
-              SAVE TO JSON_
-            </span>
-            <span aria-hidden className={classes.cybrBtnTag}>
-              {/* R25 */}
-            </span>
-          </button>
+          <div className={classes.buttonsContainer}>
+            <button
+              // disabled={hero.calculatedParameters.vitality === 0}
+              onClick={
+                this.download
+                // alert(`${hero.name} was hit`);
+                // props.hitTheHero(hero.id);
+              }
+              className={classes.cybrBtn}
+            >
+              SAVE TO JSON
+              <span aria-hidden>_</span>
+              <span aria-hidden className={classes.cybrBtnGlitch}>
+                SAVE TO JSON_
+              </span>
+              <span aria-hidden className={classes.cybrBtnTag}>
+                {/* R25 */}
+              </span>
+            </button>
 
-          <button
-            // disabled={hero.calculatedParameters.vitality === 0}
-            onClick={
-              this.upload
-              // alert(`${hero.name} delete`);
-              // props.deleteTheHero(hero.id);
-            }
-            className={classes.cybrBtn}
-          >
-            UPLOAD FROM JSON<span aria-hidden>_</span>
-            <span aria-hidden className={classes.cybrBtnGlitch}>
-              UPLOAD FROM JSON_
-            </span>
-            <span aria-hidden className={classes.cybrBtnTag}>
-              {/* {hero.id} */}
-            </span>
-          </button>
+            <button
+              // disabled={hero.calculatedParameters.vitality === 0}
+              onClick={
+                this.upload
+                // alert(`${hero.name} delete`);
+                // props.deleteTheHero(hero.id);
+              }
+              className={classes.cybrBtn}
+            >
+              UPLOAD FROM JSON<span aria-hidden>_</span>
+              <span aria-hidden className={classes.cybrBtnGlitch}>
+                UPLOAD FROM JSON_
+              </span>
+              <span aria-hidden className={classes.cybrBtnTag}>
+                {/* {hero.id} */}
+              </span>
+            </button>
+          </div>
           {/* =============== */}
         </form>
         {/* <pre className="status">{this.state.status}</pre> //=== for status of uploading check === */}

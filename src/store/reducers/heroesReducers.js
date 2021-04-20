@@ -244,16 +244,22 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          parameterPoints: state.heroes[action.heroId - 1].parameterPoints - 1,
+          parameterPoints:
+            state.heroes.find((hero) => hero.id === action.heroId)
+              .parameterPoints - 1,
           baseParameters: {
-            ...state.heroes[action.heroId - 1].baseParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .baseParameters,
             strength:
-              state.heroes[action.heroId - 1].baseParameters.strength + 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .baseParameters.strength + 1,
           },
           calculatedParameters: {
-            ...state.heroes[action.heroId - 1].calculatedParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .calculatedParameters,
             vitality:
-              state.heroes[action.heroId - 1].calculatedParameters.vitality + 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .calculatedParameters.vitality + 1,
           },
         }),
       };
@@ -264,16 +270,22 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          parameterPoints: state.heroes[action.heroId - 1].parameterPoints + 1,
+          parameterPoints:
+            state.heroes.find((hero) => hero.id === action.heroId)
+              .parameterPoints + 1,
           baseParameters: {
-            ...state.heroes[action.heroId - 1].baseParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .baseParameters,
             strength:
-              state.heroes[action.heroId - 1].baseParameters.strength - 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .baseParameters.strength - 1,
           },
           calculatedParameters: {
-            ...state.heroes[action.heroId - 1].calculatedParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .calculatedParameters,
             vitality:
-              state.heroes[action.heroId - 1].calculatedParameters.vitality - 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .calculatedParameters.vitality - 1,
           },
         }),
       };
@@ -285,17 +297,25 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          parameterPoints: state.heroes[action.heroId - 1].parameterPoints - 1,
+          parameterPoints:
+            state.heroes.find((hero) => hero.id === action.heroId)
+              .parameterPoints - 1,
           baseParameters: {
-            ...state.heroes[action.heroId - 1].baseParameters,
-            agility: state.heroes[action.heroId - 1].baseParameters.agility + 1,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .baseParameters,
+            agility:
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .baseParameters.agility + 1,
           },
           calculatedParameters: {
-            ...state.heroes[action.heroId - 1].calculatedParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .calculatedParameters,
             dodge:
-              state.heroes[action.heroId - 1].calculatedParameters.dodge + 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .calculatedParameters.dodge + 1,
             energy:
-              state.heroes[action.heroId - 1].calculatedParameters.energy + 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .calculatedParameters.energy + 1,
           },
         }),
       };
@@ -306,17 +326,25 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          parameterPoints: state.heroes[action.heroId - 1].parameterPoints + 1,
+          parameterPoints:
+            state.heroes.find((hero) => hero.id === action.heroId)
+              .parameterPoints + 1,
           baseParameters: {
-            ...state.heroes[action.heroId - 1].baseParameters,
-            agility: state.heroes[action.heroId - 1].baseParameters.agility - 1,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .baseParameters,
+            agility:
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .baseParameters.agility - 1,
           },
           calculatedParameters: {
-            ...state.heroes[action.heroId - 1].calculatedParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .calculatedParameters,
             dodge:
-              state.heroes[action.heroId - 1].calculatedParameters.dodge - 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .calculatedParameters.dodge - 1,
             energy:
-              state.heroes[action.heroId - 1].calculatedParameters.energy - 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .calculatedParameters.energy - 1,
           },
         }),
       };
@@ -328,16 +356,22 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          parameterPoints: state.heroes[action.heroId - 1].parameterPoints - 1,
+          parameterPoints:
+            state.heroes.find((hero) => hero.id === action.heroId)
+              .parameterPoints - 1,
           baseParameters: {
-            ...state.heroes[action.heroId - 1].baseParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .baseParameters,
             intelligence:
-              state.heroes[action.heroId - 1].baseParameters.intelligence + 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .baseParameters.intelligence + 1,
           },
           calculatedParameters: {
-            ...state.heroes[action.heroId - 1].calculatedParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .calculatedParameters,
             energy:
-              state.heroes[action.heroId - 1].calculatedParameters.energy + 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .calculatedParameters.energy + 1,
           },
         }),
       };
@@ -348,16 +382,22 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          parameterPoints: state.heroes[action.heroId - 1].parameterPoints + 1,
+          parameterPoints:
+            state.heroes.find((hero) => hero.id === action.heroId)
+              .parameterPoints + 1,
           baseParameters: {
-            ...state.heroes[action.heroId - 1].baseParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .baseParameters,
             intelligence:
-              state.heroes[action.heroId - 1].baseParameters.intelligence - 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .baseParameters.intelligence - 1,
           },
           calculatedParameters: {
-            ...state.heroes[action.heroId - 1].calculatedParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .calculatedParameters,
             energy:
-              state.heroes[action.heroId - 1].calculatedParameters.energy - 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .calculatedParameters.energy - 1,
           },
         }),
       };
@@ -369,11 +409,15 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          parameterPoints: state.heroes[action.heroId - 1].parameterPoints - 1,
+          parameterPoints:
+            state.heroes.find((hero) => hero.id === action.heroId)
+              .parameterPoints - 1,
           baseParameters: {
-            ...state.heroes[action.heroId - 1].baseParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .baseParameters,
             charisma:
-              state.heroes[action.heroId - 1].baseParameters.charisma + 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .baseParameters.charisma + 1,
           },
         }),
       };
@@ -384,11 +428,15 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          parameterPoints: state.heroes[action.heroId - 1].parameterPoints + 1,
+          parameterPoints:
+            state.heroes.find((hero) => hero.id === action.heroId)
+              .parameterPoints + 1,
           baseParameters: {
-            ...state.heroes[action.heroId - 1].baseParameters,
+            ...state.heroes.find((hero) => hero.id === action.heroId)
+              .baseParameters,
             charisma:
-              state.heroes[action.heroId - 1].baseParameters.charisma - 1,
+              state.heroes.find((hero) => hero.id === action.heroId)
+                .baseParameters.charisma - 1,
           },
         }),
       };
@@ -402,13 +450,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             strength: {
-              ...state.heroes[action.heroId - 1].skills.strength,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .strength,
               attack:
-                state.heroes[action.heroId - 1].skills.strength.attack + 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .strength.attack + 1,
             },
           },
         }),
@@ -420,13 +472,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             strength: {
-              ...state.heroes[action.heroId - 1].skills.strength,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .strength,
               attack:
-                state.heroes[action.heroId - 1].skills.strength.attack - 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .strength.attack - 1,
             },
           },
         }),
@@ -440,13 +496,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             agility: {
-              ...state.heroes[action.heroId - 1].skills.agility,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .agility,
               stealth:
-                state.heroes[action.heroId - 1].skills.agility.stealth + 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .agility.stealth + 1,
             },
           },
         }),
@@ -458,13 +518,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             agility: {
-              ...state.heroes[action.heroId - 1].skills.agility,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .agility,
               stealth:
-                state.heroes[action.heroId - 1].skills.agility.stealth - 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .agility.stealth - 1,
             },
           },
         }),
@@ -477,13 +541,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             agility: {
-              ...state.heroes[action.heroId - 1].skills.agility,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .agility,
               archery:
-                state.heroes[action.heroId - 1].skills.agility.archery + 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .agility.archery + 1,
             },
           },
         }),
@@ -495,13 +563,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             agility: {
-              ...state.heroes[action.heroId - 1].skills.agility,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .agility,
               archery:
-                state.heroes[action.heroId - 1].skills.agility.archery - 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .agility.archery - 1,
             },
           },
         }),
@@ -515,14 +587,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             intelligence: {
-              ...state.heroes[action.heroId - 1].skills.intelligence,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .intelligence,
               educability:
-                state.heroes[action.heroId - 1].skills.intelligence
-                  .educability + 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .intelligence.educability + 1,
             },
           },
         }),
@@ -534,14 +609,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             intelligence: {
-              ...state.heroes[action.heroId - 1].skills.intelligence,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .intelligence,
               educability:
-                state.heroes[action.heroId - 1].skills.intelligence
-                  .educability - 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .intelligence.educability - 1,
             },
           },
         }),
@@ -554,14 +632,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             intelligence: {
-              ...state.heroes[action.heroId - 1].skills.intelligence,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .intelligence,
               survivability:
-                state.heroes[action.heroId - 1].skills.intelligence
-                  .survivability + 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .intelligence.survivability + 1,
             },
           },
         }),
@@ -573,14 +654,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             intelligence: {
-              ...state.heroes[action.heroId - 1].skills.intelligence,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .intelligence,
               survivability:
-                state.heroes[action.heroId - 1].skills.intelligence
-                  .survivability - 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .intelligence.survivability - 1,
             },
           },
         }),
@@ -593,13 +677,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             intelligence: {
-              ...state.heroes[action.heroId - 1].skills.intelligence,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .intelligence,
               healing:
-                state.heroes[action.heroId - 1].skills.intelligence.healing + 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .intelligence.healing + 1,
             },
           },
         }),
@@ -611,13 +699,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             intelligence: {
-              ...state.heroes[action.heroId - 1].skills.intelligence,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .intelligence,
               healing:
-                state.heroes[action.heroId - 1].skills.intelligence.healing - 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .intelligence.healing - 1,
             },
           },
         }),
@@ -631,14 +723,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             charisma: {
-              ...state.heroes[action.heroId - 1].skills.charisma,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .charisma,
               intimidation:
-                state.heroes[action.heroId - 1].skills.charisma.intimidation +
-                1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .charisma.intimidation + 1,
             },
           },
         }),
@@ -650,14 +745,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             charisma: {
-              ...state.heroes[action.heroId - 1].skills.charisma,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .charisma,
               intimidation:
-                state.heroes[action.heroId - 1].skills.charisma.intimidation -
-                1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .charisma.intimidation - 1,
             },
           },
         }),
@@ -670,13 +768,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             charisma: {
-              ...state.heroes[action.heroId - 1].skills.charisma,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .charisma,
               insight:
-                state.heroes[action.heroId - 1].skills.charisma.insight + 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .charisma.insight + 1,
             },
           },
         }),
@@ -688,13 +790,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             charisma: {
-              ...state.heroes[action.heroId - 1].skills.charisma,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .charisma,
               insight:
-                state.heroes[action.heroId - 1].skills.charisma.insight - 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .charisma.insight - 1,
             },
           },
         }),
@@ -707,13 +813,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             charisma: {
-              ...state.heroes[action.heroId - 1].skills.charisma,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .charisma,
               appearance:
-                state.heroes[action.heroId - 1].skills.charisma.appearance + 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .charisma.appearance + 1,
             },
           },
         }),
@@ -725,13 +835,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             charisma: {
-              ...state.heroes[action.heroId - 1].skills.charisma,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .charisma,
               appearance:
-                state.heroes[action.heroId - 1].skills.charisma.appearance - 1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .charisma.appearance - 1,
             },
           },
         }),
@@ -744,14 +858,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints - 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints -
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             charisma: {
-              ...state.heroes[action.heroId - 1].skills.charisma,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .charisma,
               manipulation:
-                state.heroes[action.heroId - 1].skills.charisma.manipulation +
-                1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .charisma.manipulation + 1,
             },
           },
         }),
@@ -763,14 +880,17 @@ function heroesReducer(state = initialState, action) {
       return {
         ...state,
         heroes: updateObjectInArray(state.heroes, action.heroId, "id", {
-          skillPoints: state.heroes[action.heroId - 1].skillPoints + 1,
+          skillPoints:
+            state.heroes.find((hero) => hero.id === action.heroId).skillPoints +
+            1,
           skills: {
-            ...state.heroes[action.heroId - 1].skills,
+            ...state.heroes.find((hero) => hero.id === action.heroId).skills,
             charisma: {
-              ...state.heroes[action.heroId - 1].skills.charisma,
+              ...state.heroes.find((hero) => hero.id === action.heroId).skills
+                .charisma,
               manipulation:
-                state.heroes[action.heroId - 1].skills.charisma.manipulation -
-                1,
+                state.heroes.find((hero) => hero.id === action.heroId).skills
+                  .charisma.manipulation - 1,
             },
           },
         }),
