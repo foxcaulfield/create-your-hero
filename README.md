@@ -43,3 +43,5 @@ Built with:
 
 - You can hit or delete you hero just pressing proper buttons
   ![](./screenshots/screenshotHit.png)
+
+Happy hacking!🐱‍👤
