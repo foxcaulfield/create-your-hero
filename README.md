@@ -38,7 +38,7 @@ Built with:
   to JSON" and "Upload from JSON" buttons  
   ![](./screenshots/screenshotJSON.png)
 
-- After you finished creating the hero, click "Save and back to main button"
+- After you finished creating the hero, click "Save and back to main" button
   ![](./screenshots/screenshotBack.png)
 
 - You can hit or delete your hero just pressing proper buttons

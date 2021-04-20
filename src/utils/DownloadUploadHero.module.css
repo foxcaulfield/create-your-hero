@@ -300,7 +300,7 @@
 
 @media (max-width: 767px) {
   .downloadButtonsWrapper {
-    width: 85vw;
+    width: 99%;
   }
   .buttonsContainer {
     display: flex;

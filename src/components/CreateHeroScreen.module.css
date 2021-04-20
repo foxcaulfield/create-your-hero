@@ -411,6 +411,7 @@ body{
   transition: color 0.3s;
   margin-bottom: 0.2rem;
   margin-right: 0.2rem;
+  margin-left: 0.2rem;
 }
 .addHorizontal:hover {
   color: rgb(0, 211, 102);
@@ -432,21 +433,22 @@ body{
 .addHorizontal::after {
   content: "";
   position: absolute;
+  /* background: #fcf5fc; !!!!!!!!!!!!!!!!!!!!!!!!!!!*/
   background: #1e181e;
   z-index: 1;
   transition: all 0.3s;
 }
 .addHorizontal::before {
   width: calc(100% - 1.3rem);
-  height: calc(101% + 0.7rem);
-  top: -0.3rem;
+  height: calc(101% + 0.74rem); /* 0.7 =>0.6 */
+  top: -0.37rem;
   left: 50%;
   transform: translateX(-50%);
 }
 .addHorizontal::after {
   height: calc(100% - 1.3rem);
-  width: calc(101% + 0.7rem);
-  left: -0.3rem;
+  width: calc(101% + 0.65rem); /* 0.7 =>0.55 */
+  left: -0.32rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -486,21 +488,22 @@ body{
 .cancelVertical::after {
   content: "";
   position: absolute;
+  /* background: #fcf5fc; !!!!!!!!!!!!!!!!!!!!!!!!!!!*/
   background: #1e181e;
   z-index: 1;
   transition: all 0.3s;
 }
 .cancelVertical::before {
   width: calc(100% - 1.3rem);
-  height: calc(101% + 0.7rem);
-  top: -0.3rem;
+  height: calc(101% + 0.71rem); /* 0.7 =>0.65 */
+  top: -0.37rem; /* -0.3 => -0.34 */
   left: 50%;
   transform: translateX(-50%);
 }
 .cancelVertical::after {
   height: calc(100% - 1.3rem);
-  width: calc(101% + 1rem);
-  left: -0.5rem;
+  width: calc(101% + 0.7rem); /* 1 =>0.65 */
+  left: -0.37rem; /* -0.3 => -0.34 */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -528,6 +531,22 @@ body{
   height: 0;
 }
 
+@media (max-width: 1366px) {
+  .mainPanel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* justify-content: center; */
+    /* width: 85w; */
+  }
+  .leftSideOfPanel {
+    width: 100%;
+    align-self: center;
+  }
+  .rightSideOfPanel {
+  }
+}
+
 @media (max-width: 767px) {
   .buttonGlowing {
     width: 85vw;
@@ -536,12 +555,16 @@ body{
     width: 85vw;
     text-align: center;
   }
-}
-
-@media (max-width: 1100px) {
   .mainPanel {
     display: flex;
     flex-direction: column;
-    width: 85vw;
+    /* width: 65w; */
+    min-width: 85w;
   }
+  .leftSideOfPanel {
+    width: 100%;
+  }
+  /* .interfaceWrapper {
+    width: 90vw;
+  } */
 }

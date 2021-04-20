@@ -89,7 +89,7 @@ function CreateHeroScreen(props) {
       )}
 
       {props.isCreating && (
-        <div>
+        <div className={classes.interfaceWrapper}>
           {/* dowloader component */}
           <DownloaderUploader
             hero={theHero}
