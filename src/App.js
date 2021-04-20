@@ -8,7 +8,7 @@ import store from "./store/reduxStore";
 
 function App() {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <Route exact path="/"></Route>
         <Redirect to="/choose" />
