@@ -73,44 +73,46 @@ function ChooseHeroScreen(props) {
                   <span>Energy: {hero.calculatedParameters.energy}</span>
                 </div>
                 <br />
-                <button
-                  disabled={hero.calculatedParameters.vitality === 0}
-                  onClick={() => {
-                    // alert(`${hero.name} was hit`);
-                    props.hitTheHero(hero.id);
-                  }}
-                  className={classes.cybrBtn}
-                >
-                  {hero.calculatedParameters.vitality === 0
-                    ? "UNCONSCIOUS"
-                    : "HIT THE HERO"}
-                  <span aria-hidden>_</span>
-                  <span aria-hidden className={classes.cybrBtnGlitch}>
+                <div className={classes.buttonsContainer}>
+                  <button
+                    disabled={hero.calculatedParameters.vitality === 0}
+                    onClick={() => {
+                      // alert(`${hero.name} was hit`);
+                      props.hitTheHero(hero.id);
+                    }}
+                    className={classes.cybrBtn}
+                  >
                     {hero.calculatedParameters.vitality === 0
-                      ? "UNCONSCIOUS_"
-                      : "HIT THE HERO_"}
-                  </span>
-                  <span aria-hidden className={classes.cybrBtnTag}>
-                    {/* R25 */}
-                  </span>
-                </button>
+                      ? "UNCONSCIOUS"
+                      : "HIT THE HERO"}
+                    <span aria-hidden>_</span>
+                    <span aria-hidden className={classes.cybrBtnGlitch}>
+                      {hero.calculatedParameters.vitality === 0
+                        ? "UNCONSCIOUS_"
+                        : "HIT THE HERO_"}
+                    </span>
+                    <span aria-hidden className={classes.cybrBtnTag}>
+                      {/* R25 */}
+                    </span>
+                  </button>
 
-                <button
-                  // disabled={hero.calculatedParameters.vitality === 0}
-                  onClick={() => {
-                    // alert(`${hero.name} delete`);
-                    props.deleteTheHero(hero.id);
-                  }}
-                  className={classes.cybrBtn}
-                >
-                  DELETE<span aria-hidden>_</span>
-                  <span aria-hidden className={classes.cybrBtnGlitch}>
-                    DELETE_
-                  </span>
-                  <span aria-hidden className={classes.cybrBtnTag}>
-                    {/* {hero.id} */}
-                  </span>
-                </button>
+                  <button
+                    // disabled={hero.calculatedParameters.vitality === 0}
+                    onClick={() => {
+                      // alert(`${hero.name} delete`);
+                      props.deleteTheHero(hero.id);
+                    }}
+                    className={classes.cybrBtn}
+                  >
+                    DELETE<span aria-hidden>_</span>
+                    <span aria-hidden className={classes.cybrBtnGlitch}>
+                      DELETE_
+                    </span>
+                    <span aria-hidden className={classes.cybrBtnTag}>
+                      {/* {hero.id} */}
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
             {/* <span className={classes.cyberName}>
