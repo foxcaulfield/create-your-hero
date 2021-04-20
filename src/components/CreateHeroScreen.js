@@ -85,7 +85,7 @@ function CreateHeroScreen(props) {
           <hr />
         </div>
       ) : (
-        <h1>we can't create a hero now, please back to main page</h1>
+        <h1>we can&apos;t create a hero now, please back to main page</h1>
       )}
 
       {props.isCreating && (
