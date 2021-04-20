@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/create-your-hero/static/css/main.c8f6e93e.chunk.css",
+    "main.css": "/create-your-hero/static/css/main.7a17cfe3.chunk.css",
     "main.js": "/create-your-hero/static/js/main.6cd8244f.chunk.js",
     "main.js.map": "/create-your-hero/static/js/main.6cd8244f.chunk.js.map",
     "runtime-main.js": "/create-your-hero/static/js/runtime-main.4db0ef90.js",
@@ -10,13 +10,14 @@
     "static/js/3.543180b4.chunk.js": "/create-your-hero/static/js/3.543180b4.chunk.js",
     "static/js/3.543180b4.chunk.js.map": "/create-your-hero/static/js/3.543180b4.chunk.js.map",
     "index.html": "/create-your-hero/index.html",
-    "static/css/main.c8f6e93e.chunk.css.map": "/create-your-hero/static/css/main.c8f6e93e.chunk.css.map",
-    "static/js/2.cf821edf.chunk.js.LICENSE.txt": "/create-your-hero/static/js/2.cf821edf.chunk.js.LICENSE.txt"
+    "static/css/main.7a17cfe3.chunk.css.map": "/create-your-hero/static/css/main.7a17cfe3.chunk.css.map",
+    "static/js/2.cf821edf.chunk.js.LICENSE.txt": "/create-your-hero/static/js/2.cf821edf.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/create-your-hero/static/media/background.4a159170.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4db0ef90.js",
     "static/js/2.cf821edf.chunk.js",
-    "static/css/main.c8f6e93e.chunk.css",
+    "static/css/main.7a17cfe3.chunk.css",
     "static/js/main.6cd8244f.chunk.js"
   ]
 }
