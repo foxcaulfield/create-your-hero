@@ -35,25 +35,11 @@ Built with:
   ![](./screenshots/screenshotName.png)
 
 - You can also save your hero to JSON file an upload it later 😎 Just use "Save
-  to JSON" and "Upload from JSON" buttons ![](./screenshots/screenshotJSON.png)
+  to JSON" and "Upload from JSON" buttons  
+  ![](./screenshots/screenshotJSON.png)
 
 - After you're finished, click the "Save and back to main button"
   ![](./screenshots/screenshotBack.png)
 
 - You can hit or delete you hero just pressing proper buttons
   ![](./screenshots/screenshotHit.png)
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best
-performance.
