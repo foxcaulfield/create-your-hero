@@ -182,7 +182,8 @@ function ChooseHeroScreen(props) {
             >
               Delete the hero
             </button> */}
-            <hr />
+            {/* <hr /> */}
+            <br />
           </div>
         ))}
       </div>

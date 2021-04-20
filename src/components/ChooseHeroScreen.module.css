@@ -356,7 +356,6 @@ body {
 }
 
 /* status when maximum number of heroes reached */
-
 .maximumNumberOfHeroesStatusContainer {
   padding-top: 0.5em;
   padding-bottom: 1.5em;
@@ -481,7 +480,8 @@ body {
     100% 0,
     100% calc(100% - var(--ui-notch-amount) + 2px),
     calc(100% - var(--ui-notch-amount) + 2px) 100%,
-    0 100%
+    0 100% /* experiment below */ /* 5% 100%,
+    0% 80% */
   );
 
   /* uncomment below for red gradient at the background */
