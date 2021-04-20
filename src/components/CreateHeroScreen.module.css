@@ -531,12 +531,24 @@ body{
   height: 0;
 }
 
+/* .buttonGlowing {
+  font-size: 1.5em;
+}
+
+.fontParametersWrapperLeft {
+  font-size: 1em;
+}
+
+.fontParametersWrapperRight {
+  font-size: 1em;
+} */
+
 @media (max-width: 1366px) {
   .mainPanel {
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* justify-content: center; */
+    justify-content: center;
     /* width: 85w; */
   }
   .leftSideOfPanel {
@@ -558,6 +570,7 @@ body{
   .mainPanel {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     /* width: 65w; */
     min-width: 85w;
   }
@@ -567,4 +580,15 @@ body{
   /* .interfaceWrapper {
     width: 90vw;
   } */
+  .buttonGlowing {
+    font-size: 1.5em;
+  }
+
+  .fontParametersWrapperLeft {
+    font-size: 0.8em;
+  }
+
+  .fontParametersWrapperRight {
+    font-size: 0.8em;
+  }
 }

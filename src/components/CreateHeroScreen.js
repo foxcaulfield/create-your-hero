@@ -155,445 +155,452 @@ function CreateHeroScreen(props) {
               </div>
 
               {/* <div>id: {theHero.id}</div> */}
+              <div className={classes.fontParametersWrapperLeft}>
+                <div>
+                  <strong className={classes.mainLineText}>
+                    BASIC PARAMETERS
+                  </strong>
+                </div>
+                <div>
+                  Available parameter points:{" "}
+                  <span className={classes.valueOfStat}>
+                    {theHero.parameterPoints}
+                  </span>
+                </div>
+                <br />
+                {/* <a className={classes.addHorizontal}>
+                    <span className={classes.text}>+</span>
+                  </a>
+                  <a className={classes.cancelVertical}>
+                    <span className={classes.text}>-</span>
+                  </a> */}
+                <div>
+                  <button
+                    className={classes.addHorizontal}
+                    onClick={() => props.increaseStrength(theHero.id)}
+                    disabled={theHero.parameterPoints === 0}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    onClick={() => props.decreaseStrength(theHero.id)}
+                    disabled={theHero.baseParameters.strength === 0}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                  Strength:{" "}
+                  <span className={classes.valueOfStat}>
+                    {" "}
+                    {theHero.baseParameters.strength}
+                  </span>
+                </div>
 
-              <div>
-                <strong className={classes.mainLineText}>
-                  BASIC PARAMETERS
-                </strong>
-              </div>
-              <div>
-                Available parameter points:{" "}
-                <span className={classes.valueOfStat}>
-                  {theHero.parameterPoints}
-                </span>
-              </div>
-              <br />
-              {/* <a className={classes.addHorizontal}>
-                <span className={classes.text}>+</span>
-              </a>
-              <a className={classes.cancelVertical}>
-                <span className={classes.text}>-</span>
-              </a> */}
-              <div>
-                <button
-                  className={classes.addHorizontal}
-                  onClick={() => props.increaseStrength(theHero.id)}
-                  disabled={theHero.parameterPoints === 0}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  onClick={() => props.decreaseStrength(theHero.id)}
-                  disabled={theHero.baseParameters.strength === 0}
-                >
-                  <span>UNDO</span>
-                </button>
-                Strength:{" "}
-                <span className={classes.valueOfStat}>
-                  {" "}
-                  {theHero.baseParameters.strength}
-                </span>
-              </div>
+                <div>
+                  <button
+                    className={classes.addHorizontal}
+                    onClick={() => props.increaseAgility(theHero.id)}
+                    disabled={theHero.parameterPoints === 0}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    onClick={() => props.decreaseAgility(theHero.id)}
+                    disabled={theHero.baseParameters.agility === 0}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                  Agility:
+                  <span className={classes.valueOfStat}>
+                    {" "}
+                    {theHero.baseParameters.agility}
+                  </span>
+                </div>
 
-              <div>
-                <button
-                  className={classes.addHorizontal}
-                  onClick={() => props.increaseAgility(theHero.id)}
-                  disabled={theHero.parameterPoints === 0}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  onClick={() => props.decreaseAgility(theHero.id)}
-                  disabled={theHero.baseParameters.agility === 0}
-                >
-                  <span>UNDO</span>
-                </button>
-                Agility:
-                <span className={classes.valueOfStat}>
-                  {" "}
-                  {theHero.baseParameters.agility}
-                </span>
-              </div>
+                <div>
+                  <button
+                    className={classes.addHorizontal}
+                    onClick={() => props.increaseIntelligence(theHero.id)}
+                    disabled={theHero.parameterPoints === 0}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    onClick={() => props.decreaseIntelligence(theHero.id)}
+                    disabled={theHero.baseParameters.intelligence === 0}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                  Intelligence:{" "}
+                  <span className={classes.valueOfStat}>
+                    {theHero.baseParameters.intelligence}
+                  </span>
+                </div>
 
-              <div>
-                <button
-                  className={classes.addHorizontal}
-                  onClick={() => props.increaseIntelligence(theHero.id)}
-                  disabled={theHero.parameterPoints === 0}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  onClick={() => props.decreaseIntelligence(theHero.id)}
-                  disabled={theHero.baseParameters.intelligence === 0}
-                >
-                  <span>UNDO</span>
-                </button>
-                Intelligence:{" "}
-                <span className={classes.valueOfStat}>
-                  {theHero.baseParameters.intelligence}
-                </span>
-              </div>
-
-              <div>
-                <button
-                  className={classes.addHorizontal}
-                  onClick={() => props.increaseCharisma(theHero.id)}
-                  disabled={theHero.parameterPoints === 0}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  onClick={() => props.decreaseCharisma(theHero.id)}
-                  disabled={theHero.baseParameters.charisma === 0}
-                >
-                  <span>UNDO</span>
-                </button>
-                Charisma:{" "}
-                <span className={classes.valueOfStat}>
-                  {theHero.baseParameters.charisma}
-                </span>
-              </div>
-              <br />
-              <div>
-                <strong className={classes.mainLineText}>STATS</strong>
-              </div>
-              <div>
-                Vitality:{" "}
-                <span className={classes.valueOfStat}>
-                  {theHero.calculatedParameters.vitality}
-                </span>
-              </div>
-              <div>
-                Dodge:
-                <span className={classes.valueOfStat}>
-                  {theHero.calculatedParameters.dodge}
-                </span>
-              </div>
-              <div>
-                Energy:{" "}
-                <span className={classes.valueOfStat}>
-                  {theHero.calculatedParameters.energy}
-                </span>
+                <div>
+                  <button
+                    className={classes.addHorizontal}
+                    onClick={() => props.increaseCharisma(theHero.id)}
+                    disabled={theHero.parameterPoints === 0}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    onClick={() => props.decreaseCharisma(theHero.id)}
+                    disabled={theHero.baseParameters.charisma === 0}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                  Charisma:{" "}
+                  <span className={classes.valueOfStat}>
+                    {theHero.baseParameters.charisma}
+                  </span>
+                </div>
+                <br />
+                <div>
+                  <strong className={classes.mainLineText}>STATS</strong>
+                </div>
+                <div>
+                  Vitality:{" "}
+                  <span className={classes.valueOfStat}>
+                    {theHero.calculatedParameters.vitality}
+                  </span>
+                </div>
+                <div>
+                  Dodge:
+                  <span className={classes.valueOfStat}>
+                    {theHero.calculatedParameters.dodge}
+                  </span>
+                </div>
+                <div>
+                  Energy:{" "}
+                  <span className={classes.valueOfStat}>
+                    {theHero.calculatedParameters.energy}
+                  </span>
+                </div>
               </div>
             </div>
 
-            <div className={classes.rightSideOfPanel}>
-              <div>
-                <strong className={classes.mainLineText}>SKILLS</strong>
-              </div>
-              <div>
-                Available skill points:
-                <span className={classes.valueOfStat}>
-                  {theHero.skillPoints}
-                </span>
-              </div>
+            <div className={classes.fontParametersWrapperRight}>
+              <div className={classes.rightSideOfPanel}>
+                <div>
+                  <strong className={classes.mainLineText}>SKILLS</strong>
+                </div>
+                <div>
+                  Available skill points:
+                  <span className={classes.valueOfStat}>
+                    {theHero.skillPoints}
+                  </span>
+                </div>
 
-              <br />
-              <div>
-                <u>STRENGTH SKILLS</u>
-              </div>
-              <div>
-                Attack:{" "}
-                <span className={classes.valueOfStat}>
-                  {props.levelsNames[theHero.skills.strength.attack]}
-                </span>
-                ({theHero.skills.strength.attack})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.strength.attack >=
-                      theHero.baseParameters.strength ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.strength.attack >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseAttack(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.strength.attack === 0}
-                  onClick={() => props.decreaseAttack(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <br />
+                <div>
+                  <u>STRENGTH SKILLS</u>
+                </div>
+                <div>
+                  Attack:{" "}
+                  <span className={classes.valueOfStat}>
+                    {props.levelsNames[theHero.skills.strength.attack]}
+                  </span>
+                  ({theHero.skills.strength.attack})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.strength.attack >=
+                        theHero.baseParameters.strength ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.strength.attack >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseAttack(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.strength.attack === 0}
+                    onClick={() => props.decreaseAttack(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <br />
-              <div>
-                <u>AGILITY SKILLS</u>
-              </div>
-              <div>
-                Stealth:{" "}
-                <span className={classes.valueOfStat}>
-                  {props.levelsNames[theHero.skills.agility.stealth]}
-                </span>
-                ({theHero.skills.agility.stealth})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.agility.stealth >=
-                      theHero.baseParameters.agility ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.agility.stealth >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseStealth(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.agility.stealth === 0}
-                  onClick={() => props.decreaseStealth(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <br />
+                <div>
+                  <u>AGILITY SKILLS</u>
+                </div>
+                <div>
+                  Stealth:{" "}
+                  <span className={classes.valueOfStat}>
+                    {props.levelsNames[theHero.skills.agility.stealth]}
+                  </span>
+                  ({theHero.skills.agility.stealth})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.agility.stealth >=
+                        theHero.baseParameters.agility ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.agility.stealth >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseStealth(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.agility.stealth === 0}
+                    onClick={() => props.decreaseStealth(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <div>
-                Archery:
-                <span className={classes.valueOfStat}>
-                  {props.levelsNames[theHero.skills.agility.archery]}
-                </span>
-                ({theHero.skills.agility.archery})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.agility.archery >=
-                      theHero.baseParameters.agility ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.agility.archery >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseArchery(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.agility.archery === 0}
-                  onClick={() => props.decreaseArchery(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <div>
+                  Archery:
+                  <span className={classes.valueOfStat}>
+                    {props.levelsNames[theHero.skills.agility.archery]}
+                  </span>
+                  ({theHero.skills.agility.archery})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.agility.archery >=
+                        theHero.baseParameters.agility ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.agility.archery >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseArchery(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.agility.archery === 0}
+                    onClick={() => props.decreaseArchery(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <br />
-              <div>
-                <u>INTELLIGENCE SKILLS</u>
-              </div>
-              <div>
-                Educability:{" "}
-                <span className={classes.valueOfStat}>
-                  {" "}
-                  {props.levelsNames[theHero.skills.intelligence.educability]}
-                </span>
-                ({theHero.skills.intelligence.educability})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.intelligence.educability >=
-                      theHero.baseParameters.intelligence ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.intelligence.educability >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseEducability(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.intelligence.educability === 0}
-                  onClick={() => props.decreaseEducability(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <br />
+                <div>
+                  <u>INTELLIGENCE SKILLS</u>
+                </div>
+                <div>
+                  Educability:{" "}
+                  <span className={classes.valueOfStat}>
+                    {" "}
+                    {props.levelsNames[theHero.skills.intelligence.educability]}
+                  </span>
+                  ({theHero.skills.intelligence.educability})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.intelligence.educability >=
+                        theHero.baseParameters.intelligence ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.intelligence.educability >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseEducability(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.intelligence.educability === 0}
+                    onClick={() => props.decreaseEducability(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <div>
-                Survivability:{" "}
-                <span className={classes.valueOfStat}>
-                  {" "}
-                  {props.levelsNames[theHero.skills.intelligence.survivability]}
-                </span>
-                ({theHero.skills.intelligence.survivability})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.intelligence.survivability >=
-                      theHero.baseParameters.intelligence ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.intelligence.survivability >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseSurvivability(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.intelligence.survivability === 0}
-                  onClick={() => props.decreaseSurvivability(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <div>
+                  Survivability:{" "}
+                  <span className={classes.valueOfStat}>
+                    {" "}
+                    {
+                      props.levelsNames[
+                        theHero.skills.intelligence.survivability
+                      ]
+                    }
+                  </span>
+                  ({theHero.skills.intelligence.survivability})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.intelligence.survivability >=
+                        theHero.baseParameters.intelligence ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.intelligence.survivability >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseSurvivability(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.intelligence.survivability === 0}
+                    onClick={() => props.decreaseSurvivability(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <div>
-                Healing:{" "}
-                <span className={classes.valueOfStat}>
-                  {" "}
-                  {props.levelsNames[theHero.skills.intelligence.healing]}
-                </span>
-                ({theHero.skills.intelligence.healing})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.intelligence.healing >=
-                      theHero.baseParameters.intelligence ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.intelligence.healing >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseHealing(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.intelligence.healing === 0}
-                  onClick={() => props.decreaseHealing(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <div>
+                  Healing:{" "}
+                  <span className={classes.valueOfStat}>
+                    {" "}
+                    {props.levelsNames[theHero.skills.intelligence.healing]}
+                  </span>
+                  ({theHero.skills.intelligence.healing})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.intelligence.healing >=
+                        theHero.baseParameters.intelligence ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.intelligence.healing >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseHealing(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.intelligence.healing === 0}
+                    onClick={() => props.decreaseHealing(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <br />
-              <div>
-                <u>CHARISMA SKILLS</u>
-              </div>
-              <div>
-                Intimidation:{" "}
-                <span className={classes.valueOfStat}>
-                  {" "}
-                  {props.levelsNames[theHero.skills.charisma.intimidation]}
-                </span>
-                ({theHero.skills.charisma.intimidation})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.charisma.intimidation >=
-                      theHero.baseParameters.charisma ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.charisma.intimidation >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseIntimidation(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.charisma.intimidation === 0}
-                  onClick={() => props.decreaseIntimidation(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <br />
+                <div>
+                  <u>CHARISMA SKILLS</u>
+                </div>
+                <div>
+                  Intimidation:{" "}
+                  <span className={classes.valueOfStat}>
+                    {" "}
+                    {props.levelsNames[theHero.skills.charisma.intimidation]}
+                  </span>
+                  ({theHero.skills.charisma.intimidation})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.charisma.intimidation >=
+                        theHero.baseParameters.charisma ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.charisma.intimidation >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseIntimidation(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.charisma.intimidation === 0}
+                    onClick={() => props.decreaseIntimidation(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <div>
-                Insight:{" "}
-                <span className={classes.valueOfStat}>
-                  {props.levelsNames[theHero.skills.charisma.insight]}
-                </span>
-                ({theHero.skills.charisma.insight})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.charisma.insight >=
-                      theHero.baseParameters.charisma ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.charisma.insight >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseInsight(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.charisma.insight === 0}
-                  onClick={() => props.decreaseInsight(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <div>
+                  Insight:{" "}
+                  <span className={classes.valueOfStat}>
+                    {props.levelsNames[theHero.skills.charisma.insight]}
+                  </span>
+                  ({theHero.skills.charisma.insight})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.charisma.insight >=
+                        theHero.baseParameters.charisma ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.charisma.insight >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseInsight(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.charisma.insight === 0}
+                    onClick={() => props.decreaseInsight(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <div>
-                Appearance:{" "}
-                <span className={classes.valueOfStat}>
-                  {" "}
-                  {props.levelsNames[theHero.skills.charisma.appearance]}
-                </span>
-                ({theHero.skills.charisma.appearance})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.charisma.appearance >=
-                      theHero.baseParameters.charisma ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.charisma.appearance >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseAppearance(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.charisma.appearance === 0}
-                  onClick={() => props.decreaseAppearance(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
-              </div>
+                <div>
+                  Appearance:{" "}
+                  <span className={classes.valueOfStat}>
+                    {" "}
+                    {props.levelsNames[theHero.skills.charisma.appearance]}
+                  </span>
+                  ({theHero.skills.charisma.appearance})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.charisma.appearance >=
+                        theHero.baseParameters.charisma ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.charisma.appearance >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseAppearance(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.charisma.appearance === 0}
+                    onClick={() => props.decreaseAppearance(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
 
-              <div>
-                Manipulation:{" "}
-                <span className={classes.valueOfStat}>
-                  {" "}
-                  {props.levelsNames[theHero.skills.charisma.manipulation]}
-                </span>
-                ({theHero.skills.charisma.manipulation})
-                <button
-                  className={classes.addHorizontal}
-                  disabled={
-                    theHero.skills.charisma.manipulation >=
-                      theHero.baseParameters.charisma ||
-                    theHero.skillPoints === 0 ||
-                    theHero.skills.charisma.manipulation >=
-                      props.levelsNames.length - 1
-                  }
-                  onClick={() => props.increaseManipulation(theHero.id)}
-                >
-                  <span>ADD</span>
-                </button>
-                <button
-                  className={classes.cancelVertical}
-                  disabled={theHero.skills.charisma.manipulation === 0}
-                  onClick={() => props.decreaseManipulation(theHero.id)}
-                >
-                  <span>UNDO</span>
-                </button>
+                <div>
+                  Manipulation:{" "}
+                  <span className={classes.valueOfStat}>
+                    {" "}
+                    {props.levelsNames[theHero.skills.charisma.manipulation]}
+                  </span>
+                  ({theHero.skills.charisma.manipulation})
+                  <button
+                    className={classes.addHorizontal}
+                    disabled={
+                      theHero.skills.charisma.manipulation >=
+                        theHero.baseParameters.charisma ||
+                      theHero.skillPoints === 0 ||
+                      theHero.skills.charisma.manipulation >=
+                        props.levelsNames.length - 1
+                    }
+                    onClick={() => props.increaseManipulation(theHero.id)}
+                  >
+                    <span>ADD</span>
+                  </button>
+                  <button
+                    className={classes.cancelVertical}
+                    disabled={theHero.skills.charisma.manipulation === 0}
+                    onClick={() => props.decreaseManipulation(theHero.id)}
+                  >
+                    <span>UNDO</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
