@@ -77,7 +77,7 @@ function CreateHeroScreen(props) {
         <span></span>
         <span></span>
         <span></span>
-        Save and back to main
+        Save and back to main page
       </a>
       {props.isCreating ? (
         <div className={classes.info}>
@@ -85,7 +85,7 @@ function CreateHeroScreen(props) {
           <hr />
         </div>
       ) : (
-        <h1>we cannot create the hero now, please back to main page</h1>
+        <h1>we can't create a hero now, please back to main page</h1>
       )}
 
       {props.isCreating && (
