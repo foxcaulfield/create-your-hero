@@ -31,7 +31,7 @@ Built with:
 - Add or detract available points by clicking "Add" and "Undo" buttons
   ![](./screenshots/screenshotAdd.png)
 
-- Edit name as desired, when you're finished, click "Save"
+- Edit name as desired, when you finished, click "Save"
   ![](./screenshots/screenshotName.png)
 
 - You can also save your hero to JSON file an upload it later 😎 Just use "Save
